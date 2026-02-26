@@ -1,7 +1,6 @@
 import os
 import json
 
-# base_url = "https://github.com/piyushmohan01/PIPVIS-Image-Base/tree/master/Occlusion-Frames"
 base_url = "https://raw.githubusercontent.com/piyushmohan01/PIPVIS-Image-Base/master/Occlusion-Frames"
 root = r"./Occlusion-Frames"
 
@@ -19,7 +18,6 @@ for subset in os.listdir(root):
             # assume filename like 'frame_5561.jpg'
             frame_num = fname.split("_")[-1].split(".")[0]
             frames[frame_num] = f"{base_url}/{subset}/{ped}/{fname}"
-        # optionally add critical frame (if you know)
         manifest[subset][ped] = {"frames": frames}
 
 # write manifest
